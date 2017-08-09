@@ -5,6 +5,9 @@
  * User: malak
  * Date: 8/9/17
  * Time: 9:36 AM
+ * this class used to check the transaction so I made here
+ * some checks to know if the transaction has right data or not
+ * or the transaction has the right structure
  */
 class Transaction
 {
@@ -23,10 +26,13 @@ class Transaction
         if($this->checkTaxeStructure()){
             if($this->checkIfValidTaxeAmmout())
                 return $this->checkAmount();
-            else
-                return 'taxe  rate is too large';
+            else {
+                 echo "Taxe rate is too large <br>";
+                return false;
+            }
         }
-        return 'Structure has some Data missing';
+        echo "Structure has some Data missing <br>";
+        return false;
     }
 
 
